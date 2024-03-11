@@ -1,0 +1,44 @@
+.chous {
+	padding: 5px 0;
+	text-align: center;
+	margin: auto;
+	cursor: pointer;
+	display: flex;
+	margin-top: 20px;
+}
+
+.gray-text {
+	font-size: 12px;
+	font-weight: normal;
+}
+
+.my {
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	position: absolute;
+}
+
+
+@media (max-width: 419.9px) {
+	form {
+		margin: 0 20px;
+	}
+}
+
+@media (min-width: 420px) {
+
+	form {
+		margin: 0 20px;
+	}
+
+	.formAdd {
+		margin: 0 20px;
+	}
+}
+
+@media (min-width: 1024px) {
+	.formAdd {
+		margin: 0 50px;
+	}
+}

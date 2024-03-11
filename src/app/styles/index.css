@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Roboto:wght@400;700&family=Titillium+Web&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: #fafafa;
+    font-size: 1rem;
+}
+
+.card-grid {
+    background-color: #ffffff;
+    border: #eaeaea 1px solid;
+    transition: 0.2s background-color;
+}
+
+.card-grid:hover {
+    background-color: #f3f3f3;
+}
+
+.metatext-grid {
+    color: #203ed5;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.modal {
+    width: 90vw;
+    margin: 0 auto;
+    height: 600px;
+    overflow-x: scroll;
+}
+
+nav {
+    display: block;
+    height: 3.5rem;
+    background-color: #203ed5;
+}
+
+.sidebar {
+    width: 20%;
+    z-index: 20;
+}
+
+@media (max-width: 639px) {
+    .sidebar {
+        display: none;
+    }
+}
+
+@media (max-width: 767.9px) {
+    .sidebar {
+        display: none;
+    }
+    .bottom-menu {
+        z-index: 1;
+    }
+}
+
+@media (min-width: 767.1px) {
+    .grid-section {
+        width: 80%;
+    }
+    .sidebar {
+        z-index: 3;
+    }
+}
+
+
+/* bottom menu */
+
+.bottom-menu {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    background-color: #ffffff;
+    padding: 10px 0;
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.bottom-menu button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    padding: 10px;
+    outline: none;
+}
+
+.bottom-menu button.active {
+    color: #800080;
+}
+
+@media (min-width: 768px) {
+    .bottom-menu {
+        display: none;
+    }
+}
+
+
+/* tabs */
+
+.button {
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #f2f2f2;
+}
+
+.button.active {
+    background-color: #0000ff;
+    color: #ffffff;
+}
+
+/* Дополнительные стили для расположения кнопок, если это необходимо */
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.icon-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    outline: none;
+}
