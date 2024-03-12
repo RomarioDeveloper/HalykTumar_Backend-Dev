@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from "react-i18next";
-
 import Modal from '../modal/Modal';
-import gridData from '../ribbon/data/grid-data';
 
 function Ribbon() {
     const [selectedItem, setSelectedItem] = useState(null);
     const [searchTerm, setSearchTerm] = useState("");
     const [selectedMetaText, setSelectedMetaText] = useState("");
+    const [posts, setPosts] = useState([]);
 
     const openModal = (item) => {
         setSelectedItem(item);
@@ -21,67 +20,22 @@ function Ribbon() {
         setSelectedMetaText(e.target.value);
     };
 
-    const filteredData = gridData.filter(
+    const { t, i18n } = useTranslation();
+
+    useEffect(() => {
+        async function fetchData() {
+            const resp = await fetch('http://localhost:3000/posts');
+            const data = await resp.json();
+            setPosts(data.posts.reverse());
+        }
+        fetchData();
+    }, []);
+
+    const filteredData = posts.filter(
         (item) =>
             item.title.toLowerCase().includes(searchTerm.toLowerCase()) &&
             (selectedMetaText === "" || item.metaText === selectedMetaText)
     );
-
-    const { t, i18n } = useTranslation();
-
-    async function getPosts() {
-        const resp = await fetch('http://localhost:3000/posts');
-        const data = await resp.json();
-        console.log(data.posts);
-    
-        if (Array.isArray(data.posts)) {
-            data.posts.forEach(element => {
-                // Создание элементов   
-            });
-        } else {
-            console.error('Expected data.posts to be an array, but received:', data.posts);
-        }
-    
-        return data;
-    }
-    
-    getPosts();
-    
-
-    // async function fetchAndLogPosts() {
-    //     const postsData = await getPosts();
-    //     console.log(`постДата -> `);
-    //     console.log(postsData.posts);
-    //     return postsData.posts;
-    // }
-
-
-    // postsData.forEach(element => {
-    // Создание каждого поста
-    // element.title
-    //     <ul className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-4">
-    //     {filteredData.map((item, index) => (
-    //         <li
-    //             key={index}
-    //             className="card-grid rounded-xl bg-gray-200 p-2"
-    //             onClick={() => openModal(item)}
-    //         >
-    //             <img
-    //                 className="grid-img h-80 w-full object-none rounded-lg"
-    //                 src={item.imageUrl}
-    //                 alt={element.title}
-    //             />
-    //             <div className="flex flex-col justify-between pl-3">
-    //                 <div>
-    //                     <p className="metatext-grid pt-4">{item.metaText}</p>
-    //                     <p className="title-grid font-bold">{element.title}</p>
-    //                     <p className="date-grid text-gray-500">{element.date}</p>
-    //                 </div>
-    //             </div>
-    //         </li>
-    //     ))}
-    // </ul>
-    // });
 
     return (
         <div className='mt-10 mb-24 pl-4 pr-4'>
@@ -139,7 +93,7 @@ function Ribbon() {
                     type={selectedItem.type}
                     service={selectedItem.service}
                     city={selectedItem.city}
-                    addr={selectedItem.addr}
+                    addr={selectedItem.address}
                     who={selectedItem.who}
                 />
             )}
