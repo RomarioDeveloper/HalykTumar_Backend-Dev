@@ -31,8 +31,12 @@ export default function ItemCollection() {
 
     return (
         <>
+<<<<<<< Updated upstream
             <section className='w-full h-20 bg-blue-600'></section>
             <section className="container mx-auto p-5">
+=======
+            <section className="mx-auto pl-5 pr-5 pt-10">
+>>>>>>> Stashed changes
                 {data.map((item, index) => (
                     <div key={index} className="hover:bg-gray-200 rounded-lg my-2 p-2">
                         <button className='flex justify-between w-full' onClick={() => openModal(item.link, item.name)}>
@@ -55,7 +59,11 @@ export default function ItemCollection() {
                                 <iframe
                                     title="YouTube Video"
                                     src={videoUrl}
+<<<<<<< Updated upstream
                                     className='aspect-square w-full h-72'
+=======
+                                    className='aspect-square w-full h-96'
+>>>>>>> Stashed changes
                                     allowFullScreen
                                 />
                             </div>

@@ -28,8 +28,13 @@ function UserRating() {
       </nav>
       <ul>
         <li className="flex p-2 items-center hover:bg-gray-100 border-b-2 border-gray-100 rounded-xl relative">
+<<<<<<< Updated upstream
           <img src={men1} className="w-12 md:w-20 rounded-full" alt="Profile" />
           <div className="flex flex-col ml-4">
+=======
+          
+          <div className="flex flex-col ml-4"><img src={men1} className="w-12 md:w-20 rounded-full" alt="Profile" />
+>>>>>>> Stashed changes
             <span className="text-base font-semibold text-gray-800">Дария Ертаева</span>
             <span className="text-base text-gray-500">1 730 {t("points")}</span>
           </div>

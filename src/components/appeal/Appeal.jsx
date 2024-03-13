@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 import React, { useState } from "react";
+=======
+import React from "react";
+>>>>>>> Stashed changes
 import { useTranslation } from "react-i18next";
 import BurgerMenu from "../burgerMenu/BurgerMenu";
 
@@ -10,6 +14,7 @@ import "./Appeal.css";
 const Appeal = () => {
   const { t, i18n } = useTranslation();
 
+<<<<<<< Updated upstream
   const [formData, setFormData] = useState({
     title: "",
     appeal: "",
@@ -97,6 +102,11 @@ const Appeal = () => {
   };
 
 
+=======
+  const changeLanguage = (language) => {
+    i18n.changeLanguage(language);
+  }
+>>>>>>> Stashed changes
   return (
     <article className="w-full pt-10 pb-20">
       <nav className="fixed top-0 left-0 w-full lg:hidden md:hidden flex justify-center items-center z-50">
@@ -105,7 +115,11 @@ const Appeal = () => {
           <button className='text-white	bg-slate-600 p-2.5' onClick={() => changeLanguage("ru")}>RU</button>
         <BurgerMenu />
       </nav>
+<<<<<<< Updated upstream
       <form className="formAdd" onSubmit={handleSubmit}>
+=======
+      <form className="formAdd">
+>>>>>>> Stashed changes
         <div>
           <label className="text-gray-700 text-sm font-bold mb-1 mt-5 flex items-center justify-between">
               {t("Appeal image")}
@@ -115,13 +129,20 @@ const Appeal = () => {
             <img className="pr-2" src={imagePlus} alt="Select" />
             {t("Select an image...")}
           </label>
+<<<<<<< Updated upstream
           {/* input для изображение */}
           <input type="file" className="my" id="okn" name="image" onChange={handleImageChange} />
+=======
+          <input type="file" className="my" id="okn" name="okn" />
+>>>>>>> Stashed changes
           <label htmlFor="myfile" className="chous font-medium rounded-lg bg-blue-700 text-white w-full md:w-1/2 flex items-center justify-center">
             <img className="mr-2" src={Plus} alt="Add" />
             {t("Add more photos/videos")}
           </label>
+<<<<<<< Updated upstream
           {/* input для еще изображений */}
+=======
+>>>>>>> Stashed changes
           <input
             type="file"
             className="my"
@@ -133,7 +154,11 @@ const Appeal = () => {
 
         <hr className="mt-4"/>
 
+<<<<<<< Updated upstream
         <div>
+=======
+        <div className="">
+>>>>>>> Stashed changes
           <label
             htmlFor="username"
             className="text-gray-700 text-sm font-bold mb-2 mt-3 flex items-center justify-between"
@@ -141,15 +166,22 @@ const Appeal = () => {
             {t("Brief title of the request")}
             <p className="gray-text text-gray-500">{t("Mandatory")}</p>
           </label>
+<<<<<<< Updated upstream
           {/* input для тайтла */}
+=======
+>>>>>>> Stashed changes
           <input
             className="border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline text-xs "
             id="username"
             type="text"
+<<<<<<< Updated upstream
             name="title"
             placeholder=""
             value={formData.title}
             onChange={handleChange}
+=======
+            placeholder=""
+>>>>>>> Stashed changes
           />
         </div>
 
@@ -163,6 +195,7 @@ const Appeal = () => {
             {t("Type of appeal")}
             <p className="gray-text text-gray-500">{t("Mandatory")}</p>
           </label>
+<<<<<<< Updated upstream
           {/* select для типа */}
           <select
             className="border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline text-xs "
@@ -170,6 +203,11 @@ const Appeal = () => {
             name="appeal"
             value={formData.appeal}
             onChange={handleChange}
+=======
+          <select
+            className="border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline text-xs "
+            id="type"
+>>>>>>> Stashed changes
           >
             <option className="text-gray-500 ">{t("Choose something")}</option>
             <option>Option 2</option>
@@ -187,6 +225,7 @@ const Appeal = () => {
             {t("Description of the request")}
             <p className="gray-text text-gray-500">{t("Mandatory")}</p>
           </label>
+<<<<<<< Updated upstream
           {/* textarea для описания */}
           <textarea
             id="textarea"
@@ -194,6 +233,11 @@ const Appeal = () => {
             name="description"
             value={formData.description}
             onChange={handleChange}
+=======
+          <textarea
+            id="textarea"
+            className="border rounded-lg w-full h-24 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+>>>>>>> Stashed changes
           ></textarea>
         </div>
 
@@ -205,14 +249,20 @@ const Appeal = () => {
             {t("Address")}
             <p className="gray-text text-gray-500">{t("Mandatory")}</p>
           </label>
+<<<<<<< Updated upstream
           {/* input для адреса */}
+=======
+>>>>>>> Stashed changes
           <input
             className="appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline text-xs"
             id="adr"
             type="text"
+<<<<<<< Updated upstream
             value={formData.address}
             name="address"
             onChange={handleChange}
+=======
+>>>>>>> Stashed changes
             placeholder={t("Enter address")}
           />
         </div>

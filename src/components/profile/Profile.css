@@ -71,4 +71,9 @@
     #menu:not(:checked) ~ label[for="menu"] {
         transform: rotate(0);
     } */
+<<<<<<< Updated upstream
 }
+=======
+}
+
+>>>>>>> Stashed changes

@@ -143,4 +143,19 @@ nav {
     cursor: pointer;
     padding: 10px;
     outline: none;
+<<<<<<< Updated upstream
+=======
+}
+
+.modal-edit-profile {
+    width: 80%;
+    height: 80%;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 740px) {
+    .modal-edit-profile-phone {
+        background-color: #00000084;
+    }
+>>>>>>> Stashed changes
 }
