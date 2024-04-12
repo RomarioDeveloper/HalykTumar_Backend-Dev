@@ -63,7 +63,7 @@ function Ribbon() {
 >>>>>>> Stashed changes
     return (
         <div className='mt-10 mb-24 pl-4 pr-4'>
-            <div className="flex mb-4">
+            <div className="flex mb-10">
                 <input
                     type="text"
                     value={searchTerm}
